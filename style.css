@@ -1,0 +1,33 @@
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.center {
+  padding-left: calc(50% - 570px);
+  padding-right: calc(50% - 570px);
+}
+
+.block {
+  border: 1px solid red;
+}
+
+.title {
+  color: red;
+  text-align: center;
+}
+
+.text {
+  font-size: larger;
+  font-weight: 700;
+  text-decoration: underline;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
