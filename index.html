@@ -1,14 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Дома</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="content">
-        
-    </div>
+    <div class="content center"></div>
+    <script src="data.js">
+    </script>
+
+    <script>
+        const data = JSON.parse(dataInfo2);
+
+        for (let i = 0; i < data.length; i++) {
+
+            const contentEl = document.querySelector('.content');
+            const divEl = document.createElement('div');
+            const h1El = document.createElement('h1');
+            const imgEl = document.createElement('img');
+            const paragEl = document.createElement('p');
+
+            divEl.classList.add(`block${i + 1}`, 'block');
+            h1El.classList.add('title');
+            imgEl.classList.add('photo');
+            paragEl.classList.add('text');
+
+            contentEl.appendChild(divEl);
+            divEl.appendChild(h1El);
+            divEl.appendChild(imgEl);
+            divEl.appendChild(paragEl);
+
+            h1El.textContent = (`${data[i].firstName}  ${data[i].lastName}`);
+            imgEl.src = data[i].photoLink;
+            paragEl.textContent = (
+                `Певцу ${data[i].age} года. Он живет в ${data[i].address.country} в городе ${data[i].address.city}.`
+            )
+
+        }
+
+        // fetch('data.js')
+        //     .then((response) => {
+        //         return response.json();
+        //     })
+        //     .then((data) => {
+
+        //         const dataIn=JSON.parse(data);
+
+        //         dataIn.forEach(element => {
+        //             for (const [key, value] of Object.entries(element)) {
+        //                 console.log(`${key}: ${value}`);
+        //             }
+        //         });
+        //     });
+
+    </script>
 </body>
+
 </html>
